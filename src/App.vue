@@ -1,28 +1,58 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template >
+    <v-main >
+      <v-card id="mainStyles">        
+          <StatsPreviewCard 
+          :imageMobile="imageMobile"
+          :imageDesktop="imageDesktop"
+           @show-image="showMobileImage"
+          />
+      </v-card>
+      
+    </v-main>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StatsPreviewCard from './components/StatsPreviewCard';
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+    StatsPreviewCard,
+  },
+
+  data: () => ({
+    imageMobile:false,
+    imageDesktop:true
+  }),
+
+  methods:{
+      showMobileImage(value){
+       this.imageMobile=value
+       this.imageDesktop = !value
+      } 
+   }
+
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+
+@media screen and (max-width: 767px) {
+    #mainStyles{
+        padding:6em 2em !important;
+    }
 }
+
+ #mainStyles{
+   background-color: hsl(233, 47%, 7%);
+   padding: 8em;
+ }
+
 </style>
+
+
+
+
+

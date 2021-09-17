@@ -1,0 +1,22 @@
+
+.title-style{
+    color:$title-color;
+    font-size: $title-size;
+    font-weight: bold;
+}
+
+.body-text{
+    color:$text-body-color;
+    font-size: $body-text;
+    line-height: $line-height-body;
+}
+
+// Font Import
+.font-inter{
+    font-family: $font-family-inter;
+}
+
+.font-lexend-deca{
+    font-family: $font-family-lexend;
+}
+
